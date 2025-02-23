@@ -1,0 +1,28 @@
+ .user-head{
+        margin: auto;
+    }
+    .b-color {
+    height: 50px;
+    background-color: whitesmoke;
+    transition: background-color 0.3s ease-in-out;
+    position: relative;
+}
+.b-color:hover {
+    background-color: lightgray;
+}
+.hover-color:hover {
+  background-color: pink;
+}
+    .p-font{
+        font-family: sans-serif;
+        font-size: 100px;
+    }
+    .order-heading{
+        font-family: sans-serif;
+        font-size: 80px;
+    }
+    .pay-font{
+        font-family: sans-serif;
+        font-size: 70px; 
+    }
+    
