@@ -6,8 +6,8 @@
 <div class="d-flex flex-column mx-auto justify-content-center align-items-center p-0" 
 style="background-image: url('images/pic-6.jpg'); background-size: cover; background-position: center; height: 400px;">
    <div class="container-fluid">
-    <div class="row justify-content-center align-content-center my-auto">
-        <h1 class="text-white fs-6 topic-head">About Us</h1>
+    <div class="row">
+        <h1 class="text-white topic-head text-center">About Us</h1>
     </div>
    </div>
 </div>

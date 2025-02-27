@@ -2,24 +2,24 @@
 
 @section('content')
 
-<div class="d-flex flex-column mx-auto justify-content-center align-item2s-center border w-75 my-5 bg text-white p-3" 
-style="background-image: url('images/hero-section.jpg'); background-size: cover; background-position: center; ">
-    <div class=" mt-3 text-center">
-<h1 class="hero-headline text-uppercase font-weight-bold">Crafting excellence</h1>
-<h1 class="hero-headline text-uppercase font-weight-bold">in aluminium solutions</h1>
-    </div>
-    <div class="mt-0">
-      <h5 class="hero-body text-center">Premium aluminium fabrication for your residential,</h5>
-      <h5 class="text-center hero-body">commercial and industrial needs</h5>
-    </div>
-    <div class="text-center mb-3">
-<button class="btn btn-danger"><a class="text-white" href="{{route('products')}}">Buy Now</a></button>
+{{-- open hero-body --}}
+<div class="container-fluid hero text-white position-relative d-flex align-items-center justify-content-center" 
+     style="background-image: url('images/hero-section.jpg'); background-size: cover; background-position: center; height: 100vh;">
+  
+    <!-- Full Overlay -->
+    <div class="hero-overlay position-absolute top-0 start-0 w-100 h-100 bg-dark" style="opacity: 0.5;"></div>
+    
+    <!-- Centered Content -->
+    <div class="position-relative text-center">
+        <h1 class="display-2 mb-0">Crafting Excellence</h1>
+        <h1 class="display-2 mb-0">in Aluminium Solutions</h1>
+        <p class="lead hero-body mb-0">Premium aluminium fabrication for your</p>
+        <p class="lead hero-body">residential, commercial, and industrial needs</p>
+        <a class="btn btn-danger btn-lg mt-3" href="{{ route('products') }}">Buy Now</a>
     </div>
 </div>
-<div class="container-fluid">
-  <div class="row">
-   </div>
-</div>
+{{-- close hero --}}
+
 
 {{-- shop section --}}
 <section class="shop_section layout_padding">

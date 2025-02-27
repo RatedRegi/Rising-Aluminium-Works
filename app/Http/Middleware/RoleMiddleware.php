@@ -19,10 +19,6 @@ class RoleMiddleware
         if (!Auth::check()) {
             return redirect()->route('login');
         }
-        
-        // if (Auth::check() && Auth::user()->role === $role) {
-        //     return $next($request);
-        // }
 
         if (Auth::user()->role !== $role) {
             abort(403, 'unauthorized action');

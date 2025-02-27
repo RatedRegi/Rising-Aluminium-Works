@@ -20,10 +20,6 @@ class ProductsController extends Controller
         $testimonies = Testimony::with('user')->get();
         return view('home.index', compact('products', 'categories', 'testimonies'));
     }
-  
-    public function indecs() {
-        return view('practice.practice');
-    }
 
     public function index(Request $request) {
         $categories = Category::all();
@@ -48,7 +44,6 @@ class ProductsController extends Controller
     
     public function create(Request $request)
     {
-        
         $validatedData = $request->validate([
         'name' => 'required|string|max:255',
         'description' => 'required|string',

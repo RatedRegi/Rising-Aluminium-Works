@@ -147,7 +147,7 @@
 					<div class="row text-muted">
 						<div class="col-6 text-start">
 							<p class="mb-0">
-								<a class="text-muted" href="https://adminkit.io/" target="_blank"><strong>Admin</strong></a> - <a class="text-muted" href="https://adminkit.io/" target="_blank"><strong>Rising Aluminium Steel</strong></a>								&copy;
+								<a class="text-muted" href="https://adminkit.io/" target="_blank"><strong>Admin</strong></a> - <a class="text-muted" href="https://adminkit.io/" target="_blank"><strong>Rising Aluminium Works</strong></a>								&copy;
 							</p>
 						</div>
 						<div class="col-6 text-end">

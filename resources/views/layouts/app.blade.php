@@ -18,8 +18,10 @@
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
   <link rel="stylesheet" href="{{asset('assets/css/carousel2.css')}}">
+  <link rel="stylesheet" href="{{asset('assets/css/hero.css')}}">
   <!-- bootstrap core css -->
   <link rel="stylesheet" type="text/css" href="{{URL::asset('assets/css/bootstrap.css')}}"/>
+  <link rel="stylesheet" type="text/css" href="{{URL::asset('assets/bootstrap-5.0.2-dist/css/bootstrap.min.css')}}"/>
   <link rel="stylesheet" type="text/css" href="{{URL::asset('assets/css/customerDash.css')}}"/>
   <link rel="stylesheet" type="text/css" href="{{URL::asset('assets/css/home.css')}}"/>
   <!-- Custom styles for this template -->
@@ -29,82 +31,79 @@
 </head>
 <body>
 
-  {{-- nav bar --}}
-<nav class="navbar navbar-expand-md bg-dark navbar-dark w-100">
-<a href="" class="navbar-brand">
-    <div class="mr-2">
-<x-svg.Rising_Aluminium_Steel class="d-inline-block" />
-  </div>
-</a>
+{{-- navbar new --}}
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
-<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
-  <span class="navbar-toggler-icon"></span>
-</button>
-<div class="collapse navbar-collapse" id="navbarContent">
-  <div class="container-fluid">
-    <div class="row justify-content-between">
-      <ul class="navbar-nav ">
-        <li class="nav-item">
-          <a class="nav-link" href="{{'/'}}">Home <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{{route('products')}}">
-            Shop
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{{'/why_us'}}">
-            Why Us
-          </a>
-        </li>
-        @if(Auth::user())
-          <li class="nav-item">
-            <a class="nav-link" href="{{route('customerPortal')}}">
-              Customer Portal
-            </a>
-          </li>
-          @else
-          <li class="nav-item">
-            <a class="nav-link" href="{{'login'}}">Login <span class="sr-only">(current)</span></a>
-          </li>
-          @endif
-      </ul>
-    
-      <ul class="navbar-nav ">
-        <li class="nav-item">
-          <a class="nav-link" href="why.html">
-            
-          </a>
-        </li>
-        @if(Auth::user())
-        <div class="user_option">
-          <form action="{{route('logout')}}" method="POST">
-            @csrf
-            <button type="submit" class="bg-dark nav-link border-0">Logout</button>
-          </form>
+  <div class="collapse navbar-collapse" id="navbarContent">
+    <div class="container-fluid">
+      <div class="row align-items-center">
+        <div class="col-md-1">
+          <a href="{{'/'}}" class="navbar-brand ">
+            <div class="mr-2">
+        <x-svg.Rising_Aluminium_Steel class="d-inline-block" />
+          </div>
+        </a>
         </div>
-        @else
-        <li class="nav-item">
-          <a class="nav-link" href="{{route('register')}}">
-            Register
-          </a>
-        </li>
-        @endif
-       
-        <li class="nav-item">
-          <a class="nav-link" href="{{'/about_us'}}">About Us</a>
-        </li>
-      </ul>
+        <div class="col-md">
+              <ul class="navbar-nav justify-content-center">
+                <li class="nav-item">
+                  <a class="nav-link" href="{{'/'}}">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{{route('products')}}">
+                    Shop
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{{route('why_us')}}">
+                    Why Us
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{{'/about_us'}}">About Us</a>
+                </li>
+                @if(Auth::user())
+                  <li class="nav-item">
+                    <a class="nav-link" href="{{route('customerPortal')}}">
+                      Customer Portal
+                    </a>
+                  </li>
+                  <li>
+                      <form action="{{route('logout')}}" method="POST">
+                        @csrf
+                        <button type="submit" class="bg-dark nav-link border-0">Logout</button>
+                      </form>
+                  </li>
+                  @else
+                  <li class="nav-item">
+                    <a class="nav-link" href="{{'login'}}">Login <span class="sr-only">(current)</span></a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{{route('register')}}">
+                      Register
+                    </a>
+                  </li>
+                  @endif
+                 
+              </ul>
+        </div>
+        <div class="col-md-1">
+          <ul class="navbar-nav justify-content-end">
+             <a href="{{route('cart.index')}}" class="navbar-brand">
+                <div>
+             <x-svg.cart class="cart d-inline-block"/>
+              </div>
+              </a>
+          </ul>
+        </div>
+      </div>
     </div>
   </div>
-</div>
-<a href="{{route('cart.index')}}" class="navbar-brand mr-3">
-  <div class="">
-<x-svg.cart class="cart d-inline-block"/>
-</div>
-</a>
 </nav>
-{{-- navbar end   --}}
+{{-- navbar end --}}
 
 <x-flash-message/>
   @yield('content')
@@ -206,8 +205,9 @@
   <script src=" {{URL::asset('assets/js/jquery-3.4.1.min.js')}}"></script>
   <script src=" {{URL::asset('assets/js/bootstrap.js')}}"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-  <script src=" {{URL::asset('assets/js/custom.js')}}"></script>
-  <script src=" {{URL::asset('assets/js/alert.js')}}"></script>
+  <script src="{{URL::asset('assets/js/custom.js')}}"></script>
+ <script src="{{URL::asset('assets/js/arcodion.js')}}"></script>
+  <script src="{{URL::asset('assets/js/alert.js')}}"></script>
 <script  src="{{asset('assets/js/carousel2.js')}}"></script>
      <!-- cart info section -->
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>

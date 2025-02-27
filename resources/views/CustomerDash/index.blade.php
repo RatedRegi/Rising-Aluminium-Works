@@ -12,51 +12,50 @@
     <div class="row justify-content-between">
         <div class="col-md-10">
         {{-- accordion start --}}
-<div class="accordion" id="accordionExample">
+        <div class="accordion" id="accordionExample">
     <div class="accordion-item">
-      <h2 class="accordion-header" id="headingOne">
-        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-          Add Address
-        </button>
-      </h2>
-      <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne">
-  <div class="accordion-body">
-    <div class="container w-50 my-5">
-      <form action="{{route('storeAddress')}}" method="POST">
-        @csrf
-          <div class="form-group">
-            <label for="inputAddress">Address</label>
-            <input type="text" class="form-control" name="address_line" id="inputAddress" placeholder="1234 Main St">
-          </div>
-            <div class="form-group">
-              <label for="inputCity">City</label>
-              <input type="text" name="city" class="form-control" id="inputCity">
+        <h2 class="accordion-header" id="headingOne">
+            <button class="accordion-button" type="button" id="toggleButton">
+                Add Address
+            </button>
+        </h2>
+        <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne">
+            <div class="accordion-body">
+                <div class="container w-50 my-5">
+                    <form action="{{route('storeAddress')}}" method="POST">
+                        @csrf
+                        <div class="form-group">
+                            <label for="inputAddress">Address</label>
+                            <input type="text" class="form-control" name="address_line" id="inputAddress" placeholder="1234 Main St">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputCity">City</label>
+                            <input type="text" name="city" class="form-control" id="inputCity">
+                        </div>
+                        <div class="form-group">
+                            <label for="inputState">Province</label>
+                            <x-address/>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputZip">Zip</label>
+                            <input type="text" class="form-control" name="zip" id="inputZip" placeholder="eg 2341">
+                        </div>
+                        <input type="hidden" class="form-control" name="user_id" id="inputZip" value="{{Auth::id()}}">
+                        <div class="form-group">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="gridCheck">
+                                <label class="form-check-label" for="gridCheck">Check me out</label>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Add</button>
+                    </form>
+                </div>
             </div>
-            <div class="form-group">
-              <label for="inputState">Province</label>
-              <x-address/>
-            </div>
-            <div class="form-group">
-              <label for="inputZip">Zip</label>
-              <input type="text" class="form-control" name="zip" id="inputZip" placeholder="eg 2341">
-            </div>
-            <input type="hidden" class="form-control" name="user_id" id="inputZip" value="{{Auth::id()}}">
-          <div class="form-group">
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" id="gridCheck">
-              <label class="form-check-label" for="gridCheck">
-                Check me out
-              </label>
-            </div>
-          </div>
-          <button type="submit" class="btn btn-primary">Add</button>
-        </form>
-  </div>
-  </div>
-      </div>
+        </div>
     </div>
-  </div>
-  
+</div>
+
+
   {{-- accordion end --}}
         </div>
         <div class="col-md">
@@ -106,42 +105,46 @@
 {{-- payment start --}}
 <div class="container-fluid">
     <div class="row justify-content-center">
-        <div class="d-flex">
-            <div class="card flex-fill">
+        <div class="col-12 col-md-10 col-lg-8"> {{-- Ensures proper column width on different screens --}}
+            <div class="card">
                 <div class="card-header">
-
                     <h5 class="card-title mb-0">Personal</h5>
                 </div>
-                <table class="table table-hover my-0 text-center">
-                    <thead>
-                        <tr>
-                            <th>Name</th>
-                            <th>Surname</th>
-                            <th>Email</th>
-                            <th class="d-none d-md-table-cell">Phone #</th>
-                            <th class="d-none d-md-table-cell">Address</th>
-                            <th class="d-none d-xl-table-cell">City</th>
-                            <th class="d-none d-xl-table-cell">Province</th>
-                            <th class="d-none d-xl-table-cell">Zip</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>{{$user->name}}</td>
-                            <td>{{$user->surname}}</td>
-                            <td>{{$user->email}}</td>
-                            <td class="d-none d-md-table-cell">{{$user->phone_number}}</td>
-                            <td class="d-none d-md-table-cell">{{$address->address_line ?? 'N/A'}}</td>
-                            <td class="d-none d-md-table-cell">{{$address->city ?? 'N/A'}}</td>
-                            <td class="d-none d-md-table-cell">{{$address->province ?? 'N/A'}}</td>
-                            <td class="d-none d-md-table-cell">{{$address->zip ?? 'N/A'}}</td>
-                        </tr>
-                    </tbody>
-                </table>
+
+                {{-- Make table scrollable on small screens --}}
+                <div class="table-responsive">
+                    <table class="table table-hover my-0 text-center">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Surname</th>
+                                <th>Email</th>
+                                <th class="d-none d-md-table-cell">Phone #</th>
+                                <th class="d-none d-md-table-cell">Address</th>
+                                <th class="d-none d-xl-table-cell">City</th>
+                                <th class="d-none d-xl-table-cell">Province</th>
+                                <th class="d-none d-xl-table-cell">Zip</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>{{$user->name}}</td>
+                                <td>{{$user->surname}}</td>
+                                <td>{{$user->email}}</td>
+                                <td class="d-none d-md-table-cell">{{$user->phone_number}}</td>
+                                <td class="d-none d-md-table-cell">{{$address->address_line ?? 'N/A'}}</td>
+                                <td class="d-none d-xl-table-cell">{{$address->city ?? 'N/A'}}</td>
+                                <td class="d-none d-xl-table-cell">{{$address->province ?? 'N/A'}}</td>
+                                <td class="d-none d-xl-table-cell">{{$address->zip ?? 'N/A'}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div> {{-- End table-responsive --}}
             </div>
         </div>
     </div>
 </div>
+
 {{-- payment end --}}
 <div class="container-fluid text-center my-5">
   <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#ModalUpdate-{{optional($address)->id}}">Update Details</button>

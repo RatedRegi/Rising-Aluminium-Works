@@ -24,17 +24,12 @@ class RegisterController extends Controller
         'password' => 'required|confirmed|min:8',
       ]);
 
-      // if($request->hasFile('photo_url')){
-      //   $validatedData['photo_url'] = $request->file('photo_url')->store('images', 'public');
-      //    }
-
         $user = new User;
         $user->name = $validatedData['name'];
         $user->surname = $validatedData['surname'];
         $user->email = $validatedData['email'];
         $user->phone_number = $validatedData['phone_number'];
         $user->password = Hash::make($validatedData['password']);
-
         $user->save();
 
         return redirect()->route('login')->with('success', 'User registered successfully.');

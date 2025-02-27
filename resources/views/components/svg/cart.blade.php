@@ -40,7 +40,7 @@
     </svg>
     
 
-<span class="position-absolute top-0 start-50 fs-2 translate-middle text-white badge rounded-circle bg-danger cart-badge"
+<span class="top-0 start-50 fs-6 translate-middle text-white badge rounded-circle bg-danger cart-badge"
 style="font-size: 15px; padding: 5px 10px;" >
     {{$cartCount}}
 </span>

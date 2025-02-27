@@ -12,7 +12,7 @@ class FAQController extends Controller
             ['question' => 'What services does Rising Aluminium Works provide?', 'answer' => 'We specialize in aluminium fabrication, including windows, doors, partitions, and custom aluminium structures.'],
             ['question' => 'Do you offer customized aluminium designs?', 'answer' => 'Yes, we provide fully customized aluminium solutions based on your requirements.'],
             ['question' => 'Can I request a free quotation?', 'answer' => 'Yes, you can request a free quotation by providing your project details through our website or by contacting us directly.'],
-            ['question' =>'Where is your company located?', 'answer' => 'Our workshop is located at Cape Town, and we serve customers across windows, doors, sheets etc.'],
+            ['question' =>'Where is your company located?', 'answer' => 'Our workshop is located in Gweru, and we serve customers across windows, doors, sheets etc.'],
             ['question' => 'What are the benefits of aluminium over other materials?', 'answer' => 'Aluminium is lightweight, durable, rust-resistant, and provides a modern aesthetic for homes and businesses.'],
             ['question' => 'What types of aluminium doors and windows do you manufacture?', 'answer' => 'We offer sliding, casement, folding, and fixed aluminium doors and windows in various designs.'],
             ['question' => 'How long does it take to complete an order?', 'answer' => 'The timeline depends on the project size and complexity, but we provide an estimated delivery schedule upon order confirmation.'],
