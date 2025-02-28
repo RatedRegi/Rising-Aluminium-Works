@@ -56,7 +56,7 @@
             </div>
     </section>  
 {{-- pagination --}}
-<div class="container-fluid mb-5 border">
+<div class="container-fluid mb-5">
     <div class="row justify-content-center">
         <nav aria-label="Page navigation example">
             <ul class="pagination justify-content-center">
