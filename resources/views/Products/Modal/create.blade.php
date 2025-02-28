@@ -1,6 +1,4 @@
-
-  
-  <!-- Modal -->
+<!-- Modal -->
   <form action="{{route('productCreate')}}" method="POST" enctype="multipart/form-data">
     @csrf
   <div class="modal fade" id="ModalCreate" tabindex="-1" aria-labelledby="ModalCreateLabel" aria-hidden="true">

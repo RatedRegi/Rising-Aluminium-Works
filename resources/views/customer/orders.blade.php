@@ -52,13 +52,9 @@
         </div>
     </div>
 
-    <!-- Back to Orders -->
-    {{-- <div class="mt-4">
-        <a href="{{ route('mastercard.payment', ['order_id' => $order->id]) }}" class="btn btn-primary mb-5">Pay with MasterCard</a>
-    </div> --}}
     @endforeach
     @else
-    <p>No order available!</p>
+    <p class="text-muted">No order available!</p>
 @endif
 </div>
 

@@ -1,6 +1,5 @@
 @extends('layouts.app')
 
-
 @section('content')
  
 <div class="container mt-5 w-75">
@@ -57,36 +56,32 @@
             </div>
     </section>  
 {{-- pagination --}}
-    <div class="container-fluid mb-5">
-        <div class="row justify-content-center">
-            <nav aria-label="Page navigation example">
-                <ul class="pagination">
-                    <!-- Previous Page Link -->
-                    <li class="page-item {{ $products->onFirstPage() ? 'disabled' : '' }}">
-                        <a class="page-link" href="{{ $products->previousPageUrl() }}" aria-label="Previous">
-                            <span aria-hidden="true">&laquo; Previous</span>
-                        </a>
+<div class="container-fluid mb-5 border">
+    <div class="row justify-content-center">
+        <nav aria-label="Page navigation example">
+            <ul class="pagination justify-content-center">
+                <!-- Previous Page Link -->
+                <li class="page-item {{ $products->onFirstPage() ? 'disabled' : '' }}">
+                    <a class="page-link" href="{{ $products->previousPageUrl() }}" aria-label="Previous">
+                        <span aria-hidden="true">&laquo; Previous</span>
+                    </a>
+                </li>
+
+                <!-- Pagination Links (for each page number) -->
+                @foreach ($products->getUrlRange(1, $products->lastPage()) as $page => $url)
+                    <li class="page-item {{ $page == $products->currentPage() ? 'active' : '' }}">
+                        <a class="page-link" href="{{ $url }}">{{ $page }}</a>
                     </li>
-            
-                    <!-- Pagination Links (for each page number) -->
-                    @foreach ($products->getUrlRange(1, $products->lastPage()) as $page => $url)
-                        <li class="page-item {{ $page == $products->currentPage() ? 'active' : '' }}">
-                            <a class="page-link" href="{{ $url }}">{{ $page }}</a>
-                        </li>
-                    @endforeach
-            
-                    <!-- Next Page Link -->
-                    <li class="page-item {{ $products->hasMorePages() ? '' : 'disabled' }}">
-                        <a class="page-link" href="{{ $products->nextPageUrl() }}" aria-label="Next">
-                            <span aria-hidden="true">Next &raquo;</span>
-                        </a>
-                    </li>
-                </ul>
-            </nav>
-        </div>
+                @endforeach
+
+                <!-- Next Page Link -->
+                <li class="page-item {{ $products->hasMorePages() ? '' : 'disabled' }}">
+                    <a class="page-link" href="{{ $products->nextPageUrl() }}" aria-label="Next">
+                        <span aria-hidden="true">Next &raquo;</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
     </div>
-
-<!-- Add jQuery and AJAX logic -->    
-<script type="text/javascript" src="{{asset('assets/js/alert.js')}}"></script>
-
+</div>
 @endsection

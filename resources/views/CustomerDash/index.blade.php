@@ -2,12 +2,6 @@
 
 @section('content')
 
-@if(session('message'))
-<div class="alert alert-success" id="success-alert">
-    {{ session('message') }}
-</div>
-@endif
-
 <div class="container-fluid my-5">
     <div class="row justify-content-between">
         <div class="col-md-10">
@@ -55,7 +49,6 @@
     </div>
 </div>
 
-
   {{-- accordion end --}}
         </div>
         <div class="col-md">
@@ -102,7 +95,7 @@
 <div class="container-fluid my-5">
             <h4 class="pay-font text-center">My Details</h4>
   </div>
-{{-- payment start --}}
+{{-- details update --}}
 <div class="container-fluid">
     <div class="row justify-content-center">
         <div class="col-12 col-md-10 col-lg-8"> {{-- Ensures proper column width on different screens --}}
@@ -110,7 +103,6 @@
                 <div class="card-header">
                     <h5 class="card-title mb-0">Personal</h5>
                 </div>
-
                 {{-- Make table scrollable on small screens --}}
                 <div class="table-responsive">
                     <table class="table table-hover my-0 text-center">
@@ -119,7 +111,7 @@
                                 <th>Name</th>
                                 <th>Surname</th>
                                 <th>Email</th>
-                                <th class="d-none d-md-table-cell">Phone #</th>
+                                <th class="d-none d-md-table-cell">Phone</th>
                                 <th class="d-none d-md-table-cell">Address</th>
                                 <th class="d-none d-xl-table-cell">City</th>
                                 <th class="d-none d-xl-table-cell">Province</th>
@@ -145,7 +137,7 @@
     </div>
 </div>
 
-{{-- payment end --}}
+{{-- details end --}}
 <div class="container-fluid text-center my-5">
   <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#ModalUpdate-{{optional($address)->id}}">Update Details</button>
 </div>

@@ -50,10 +50,10 @@
 									<h5 class="h6 card-title">Elsewhere</h5>
 									<ul class="list-unstyled mb-0">		
 										<li class="mb-1"><a href="#">X</a></li>
-										<li class="mb-1"><a href="#">Facebook</a></li>
+										<li class="mb-1"><a href="{{'https://www.facebook.com/reginald.chikuni.9/'}}">Facebook</a></li>
 										<li class="mb-1"><a href="#">Instagram</a></li>
-										<li class="mb-1"><a href="#">GitHub</a></li>
-										<li class="mb-1"><a href="#">LinkedIn</a></li>
+										<li class="mb-1"><a href="{{'https://github.com/RatedRegi?tab=repositories'}}">GitHub</a></li>
+										<li class="mb-1"><a href="{{'https://www.linkedin.com/in/reginald-chikuni-969a0620b/'}}">LinkedIn</a></li>
 									</ul>
 								</div>
 							</div>

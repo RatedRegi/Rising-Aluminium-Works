@@ -22,7 +22,6 @@
             <p><strong>Order Date:</strong> {{ $localTime->format('F j, Y, g:i a') }}</p>
         </div>
     </div>
-
     <!-- Order Items -->
     <div class="card">
         <div class="card-header">
@@ -52,7 +51,4 @@
         </div>
     </div>
 </div>
-
-
-
 @endsection

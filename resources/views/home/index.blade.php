@@ -5,7 +5,6 @@
 {{-- open hero-body --}}
 <div class="container-fluid hero text-white position-relative d-flex align-items-center justify-content-center" 
      style="background-image: url('images/hero-section.jpg'); background-size: cover; background-position: center; height: 100vh;">
-  
     <!-- Full Overlay -->
     <div class="hero-overlay position-absolute top-0 start-0 w-100 h-100 bg-dark" style="opacity: 0.5;"></div>
     
@@ -83,10 +82,7 @@
   </aside>
 </div>
 </section>  
-
-
   <!-- quotation section -->
-
   <section class="contact_section my-5">
     <div class="container px-0">
       <div class="heading_container heading_center">
@@ -128,9 +124,7 @@
       </div>
     </div>
   </section>
-
   <!-- end quotation section -->
-
 
   <!-- client section -->
   <section class="client_section layout_padding">
@@ -182,7 +176,6 @@
         </div>
       </div>
     </div>
-
   </section>
   <!-- end client section -->
 @endsection

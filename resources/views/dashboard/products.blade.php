@@ -124,7 +124,7 @@
 <div class="container-fluid">
 	<div class="row justify-content-center">
 		<nav aria-label="Page navigation example">
-			<ul class="pagination">
+			<ul class="pagination justify-content-center">
 				<!-- Previous Page Link -->
 				<li class="page-item {{ $products->onFirstPage() ? 'disabled' : '' }}">
 					<a class="page-link" href="{{ $products->previousPageUrl() }}" aria-label="Previous">

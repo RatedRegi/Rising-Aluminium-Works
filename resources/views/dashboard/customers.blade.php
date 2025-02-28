@@ -59,7 +59,7 @@
 <div class="container-fluid">
 	<div class="row justify-content-center">
 		<nav aria-label="Page navigation example">
-			<ul class="pagination">
+			<ul class="pagination justify-content-center">
 				<!-- Previous Page Link -->
 				<li class="page-item {{ $users->onFirstPage() ? 'disabled' : '' }}">
 					<a class="page-link" href="{{ $users->previousPageUrl() }}" aria-label="Previous">
@@ -84,4 +84,4 @@
 		</nav>
 	</div>
 </div>
-			@endsection
+@endsection
