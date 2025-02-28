@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container mt-5">
+<div class="container my-5">
     <h1>Your Cart</h1>
     
     @if($cart && $cart->items->count())

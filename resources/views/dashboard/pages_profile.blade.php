@@ -159,5 +159,4 @@
 
 				</div>
 			</main>
-
 			@endsection

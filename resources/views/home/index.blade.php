@@ -12,8 +12,8 @@
     <div class="position-relative text-center">
         <h1 class="display-2 mb-0">Crafting Excellence</h1>
         <h1 class="display-2 mb-0">in Aluminium Solutions</h1>
-        <p class="lead hero-body mb-0">Premium aluminium fabrication for your</p>
-        <p class="lead hero-body">residential, commercial, and industrial needs</p>
+        <p class="lead mb-0">Premium aluminium fabrication for your</p>
+        <p class="lead">residential, commercial, and industrial needs</p>
         <a class="btn btn-danger btn-lg mt-3" href="{{ route('products') }}">Buy Now</a>
     </div>
 </div>

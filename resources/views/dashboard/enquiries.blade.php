@@ -15,7 +15,6 @@
 							<div class="card">
 								<div class="card-body">
 									<h5 class="card-title">New enquiry from {{$enquiry->name}}</h5>
-			
 									<!-- Bootstrap Alert -->
 									<div class="alert alert-info alert-dismissible fade show" role="alert">
 										<strong>Message:</strong> {{$enquiry->message}}
